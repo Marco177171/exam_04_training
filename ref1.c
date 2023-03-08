@@ -53,7 +53,7 @@ int    main(int argc, char *argv[], char *env[])
             if (i != 2)
                 ft_putstr_fd2("error: cd: bad arguments", NULL);
             else if (chdir(argv[1]) != 0)
-                ft_putstr_fd2("error: cd: cannot change directory to ", argv[1]    );
+                ft_putstr_fd2("error: cd: cannot change directory to ", argv[1]);
         }
         else if (i != 0 && (argv[i] == NULL || strcmp(argv[i], ";") == 0)) //exec in stdout
         {

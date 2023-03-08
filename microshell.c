@@ -29,14 +29,15 @@ int main(int argc, char *argv[], char *env[])
 	int tmp_fd;
 	(void) argc;
 
-	index = 0;
+	index = 1;
 	tmp_fd = dup(STDIN_FILENO);
 	while (argv[index] && argv[index + 1])
 	{
-		argv = &argv[index + 1];
-		index = 0;
-		while (argv[index] && !strcmp(argv[index], ";") && !strcmp(argv[index], "|"))
+		if (!strcmp(argv[index], ";") || !strcmp(argv[index], "|"))
+		{
 			index++;
+			break ;
+		}
 		if (strcmp(argv[index], "cd") == 0) // cd found
 		{
 			if (index != 2)
@@ -77,6 +78,7 @@ int main(int argc, char *argv[], char *env[])
 				tmp_fd = fd[0];
 			}
 		}
+		index++;
 	}
 	close(tmp_fd);
 	return (0);
