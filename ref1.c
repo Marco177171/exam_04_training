@@ -1,6 +1,6 @@
-#include unistd.h
-#include sys/wait.h
-#include string.h
+#include <unistd.h>
+#include <sys/wait.h>
+#include <string.h>
 
 /*not needed in exam, but necessary if you want to use this tester:
 https://github.com/Glagan/42-exam-rank-04/blob/master/microshell/test.sh*/
