@@ -66,7 +66,6 @@ int ft_error(char *error, char *arg, int exit)
 		write(2, error, ft_strlen(error));
 		write(2, "\n", 1);
 		free(error);
-		//EXIT = exit;
 		return (EXIT);
 	}
 }
