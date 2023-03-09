@@ -46,12 +46,14 @@ int main(int argc, char *argv[], char *env[])
 			index++;
 			pipe_count--;
 		}
-		// se pipe count torna a 1 -> fd = STDOUT
 		else if (strcmp(argv[index], "cd") == 0)
 		{
 			index++;
 			if (!argv[index])
+			{
 				ft_error("error: cd: bad argument\n");
+				return (exit_status);
+			}
 			else if (chdir(argv[index]) == -1)
 			{
 				ft_error("error: cd: cannot chage dir to ");
