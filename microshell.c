@@ -40,10 +40,14 @@ int main(int argc, char *argv[], char *env[])
 		}
 		if (strcmp(argv[index], "cd") == 0) // cd found
 		{
-			if (index != 2)
-				ft_putstr_fd("error: cd: bad arguments", NULL);
-			else if (chdir(argv[1]) != 0)
-				ft_putstr_fd("error: cd: cannot change directory to ", argv[1]);
+			index++;
+			if (!argv[index])
+			{
+				ft_putstr_fd("error: cd: arguments", NULL);
+				break ;
+			}
+			if (chdir(argv[index]) != 0)
+				ft_putstr_fd("error: cd: cannot change directory to ", argv[index]);
 		}
 		else if (index != 0 && (argv[index] == NULL || strcmp(argv[index], ";") == 0)) // exec in stdout
 		{
