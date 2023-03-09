@@ -66,7 +66,6 @@ int main(int argc, char *argv[], char *env[])
 			ft_error("error: cannot execute ");
 			ft_error(argv[index]);
 			ft_error("\n");
-			index++;
 		}
 		index++;
 	}
