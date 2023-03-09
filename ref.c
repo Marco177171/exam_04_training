@@ -46,7 +46,7 @@ int	main(int argc, char *argv[], char *env[])
 		}
 		else if (i != 0 && (argv[i] == NULL || strcmp(argv[i], ";") == 0))
 		{
-			if ( fork() == 0)
+			if (fork() == 0)
 			{
 				if (ft_execute(argv, i, tmp_fd, env))
 					return (1);
@@ -62,7 +62,7 @@ int	main(int argc, char *argv[], char *env[])
 		else if(i != 0 && strcmp(argv[i], "|") == 0)
 		{
 			pipe(fd);
-			if ( fork() == 0)
+			if (fork() == 0)
 			{
 				dup2(fd[1], STDOUT_FILENO);
 				close(fd[0]);
